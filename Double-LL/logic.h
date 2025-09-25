@@ -16,5 +16,7 @@ class DoubleLL{
   public:
     DoubleLL(int value);
     void printList();
-    int getValue();
+    int getHead();
+    int getTail();
+    int getLength();
 };

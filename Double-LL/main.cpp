@@ -2,6 +2,7 @@
 #include "logic.h"
 
 int main(){
-  std::cout<<"Hello world"<<std::endl;
+  DoubleLL * ddll = new DoubleLL(5);
+  ddll->printList();
   return 0;
 }

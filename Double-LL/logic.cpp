@@ -27,3 +27,29 @@ void DoubleLL::printList(){
   }
   std::cout<<"[+]End of the printList function"<<std::endl;
 }
+
+int DoubleLL::getHead(){
+  int aux_value = 0;
+  if(this->head==nullptr){
+    std::cout<<"[-] The list is empty"<<std::endl;
+    return -1;
+  }else{
+    aux_value=this->head->value;
+    return aux_value;
+  }
+}  
+
+int DoubleLL::getTail(){
+  int aux_value = 0;
+  if(this->tail==nullptr){
+    std::cout<<"[-] The tail is nullptr"<<std::endl;
+    return -1;
+  }else{
+    aux_value = this->tail->value;
+    return aux_value;
+  }  
+}
+
+int DoubleLL::getLength(){
+  return this->length;
+}  
