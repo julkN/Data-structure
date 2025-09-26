@@ -21,4 +21,6 @@ class DoubleLL{
     int getLength();
     void append(int value);
     void deleteLast();
+    void prepend(int value);
+    void deleteFirst();
 };

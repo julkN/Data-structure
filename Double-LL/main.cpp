@@ -10,5 +10,9 @@ int main(){
   ddll->printList();
   ddll->deleteLast();
   ddll->printList();
+  ddll->prepend(101);
+  ddll->printList();
+  ddll->deleteFirst();
+  ddll->printList();
   return 0;
 }

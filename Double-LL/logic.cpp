@@ -71,7 +71,13 @@ void DoubleLL::deleteLast(){
   Node * auxNode = nullptr;
   if(this->head==nullptr)
     std::cout<<"[-] There is no elements to delete"<< std::endl;
-  else{
+  else if(this->head==this->tail){
+    auxNode = head;
+    head = nullptr;
+    tail = nullptr;
+    delete(auxNode);
+    length = 0;
+  }else{
     auxNode = tail;
     tail = tail->back;
     tail->next = nullptr;
@@ -80,3 +86,30 @@ void DoubleLL::deleteLast(){
   }   
 }
 
+void DoubleLL::prepend(int value){
+  Node * newNode = new Node(value);
+  if(this->head==nullptr){
+    this->head = newNode;
+    this->tail = newNode;
+  }else{
+    newNode->next = head;
+    head->back = newNode;
+    head = newNode;
+ }
+ length++;
+} 
+
+void DoubleLL::deleteFirst(){ 
+  if(this->head==nullptr){
+    std::cout<<"[-]The list is empty"<<std::endl;
+    return;
+  }
+  Node * tmp = this->head;
+  if(this->head==this->tail){
+    this->head = nullptr;
+    this->tail = nullptr;
+  }else
+    this->head = this->head->next;
+  delete(tmp);
+  length;
+}
