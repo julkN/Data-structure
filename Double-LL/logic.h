@@ -20,4 +20,5 @@ class DoubleLL{
     int getTail();
     int getLength();
     void append(int value);
+    void deleteLast();
 };

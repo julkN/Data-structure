@@ -66,3 +66,17 @@ void DoubleLL::append(int value){
   }
   length++;
 }  
+
+void DoubleLL::deleteLast(){
+  Node * auxNode = nullptr;
+  if(this->head==nullptr)
+    std::cout<<"[-] There is no elements to delete"<< std::endl;
+  else{
+    auxNode = tail;
+    tail = tail->back;
+    tail->next = nullptr;
+    length--;
+    delete(auxNode);
+  }   
+}
+
