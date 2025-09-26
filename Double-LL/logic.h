@@ -19,4 +19,5 @@ class DoubleLL{
     int getHead();
     int getTail();
     int getLength();
+    void append(int value);
 };

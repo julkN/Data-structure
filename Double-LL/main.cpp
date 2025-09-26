@@ -1,8 +1,10 @@
 #include <iostream>
+#include <memory>
 #include "logic.h"
 
 int main(){
-  DoubleLL * ddll = new DoubleLL(5);
+  std::unique_ptr<DoubleLL> ddll(new DoubleLL(5));
+  ddll->append(7);
   ddll->printList();
   return 0;
 }

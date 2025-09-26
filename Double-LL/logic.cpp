@@ -53,3 +53,16 @@ int DoubleLL::getTail(){
 int DoubleLL::getLength(){
   return this->length;
 }  
+
+void DoubleLL::append(int value){
+  Node * newNode = new Node(value);
+  if(this->head==nullptr){
+    head = newNode;
+    tail = newNode;
+  }else{
+    tail->next = newNode;
+    newNode->back = tail;
+    tail = newNode;
+  }
+  length++;
+}  
