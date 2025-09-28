@@ -24,4 +24,5 @@ class DoubleLL{
     void prepend(int value);
     void deleteFirst();
     Node * get(short position);
+    bool set(short index, int value);
 };

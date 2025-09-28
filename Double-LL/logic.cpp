@@ -134,3 +134,13 @@ Node * DoubleLL::get(short position){
   }
   return tmp;
 }
+
+bool DoubleLL::set(short index, int value){
+  Node * tmp = this->get(index);
+  if(tmp){
+    tmp->value= value;
+    return true;
+  }else
+    std::cout<<"It could not possible modify the node"<<std::endl;
+  return false;
+}

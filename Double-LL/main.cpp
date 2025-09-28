@@ -17,5 +17,7 @@ int main(){
   std::cout<<"Invoque get function"<<std::endl;
   if(ddll->get(2))
     std::cout<<ddll->get(2)->value<<std::endl;
+  ddll->set(0,99);
+  ddll->printList();
   return 0;
 }
