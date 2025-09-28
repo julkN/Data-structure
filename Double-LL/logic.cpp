@@ -110,6 +110,27 @@ void DoubleLL::deleteFirst(){
     this->tail = nullptr;
   }else
     this->head = this->head->next;
+    this->head->back = nullptr;
   delete(tmp);
-  length;
+  length--;
+}
+
+Node * DoubleLL::get(short position){
+  Node * tmp = nullptr;
+  if(this->head==nullptr)
+    std::cout<<"[-]The list is empty"<<std::endl; 
+  else if(position>=length || position<0)
+    std::cout<<"[-]Out of range"<<std::endl;
+  else{  
+    if(position>length/2){
+     tmp = this->head;
+      for(size_t i = 0;i<position; i++)
+        tmp=tmp->next;  
+    }else{
+      tmp=this->tail;
+      for(size_t i = length-1; i>position;i--)
+        tmp=tmp->back;  
+    }
+  }
+  return tmp;
 }

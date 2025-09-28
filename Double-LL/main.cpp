@@ -14,5 +14,8 @@ int main(){
   ddll->printList();
   ddll->deleteFirst();
   ddll->printList();
+  std::cout<<"Invoque get function"<<std::endl;
+  if(ddll->get(2))
+    std::cout<<ddll->get(2)->value<<std::endl;
   return 0;
 }

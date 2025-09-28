@@ -23,4 +23,5 @@ class DoubleLL{
     void deleteLast();
     void prepend(int value);
     void deleteFirst();
+    Node * get(short position);
 };
