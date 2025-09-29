@@ -25,4 +25,6 @@ class DoubleLL{
     void deleteFirst();
     Node * get(short position);
     bool set(short index, int value);
+    bool insert(short index, int value);
+    bool deleteNode(short index);
 };

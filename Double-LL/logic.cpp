@@ -144,3 +144,57 @@ bool DoubleLL::set(short index, int value){
     std::cout<<"It could not possible modify the node"<<std::endl;
   return false;
 }
+
+
+bool DoubleLL::insert(short index, int value){
+  if(index>this->length||this->length<0){
+      std::cout<<"[-]It is not possible to insert this element"<<std::endl;
+      return false;
+  }
+  Node * newNode = new Node(value);
+  Node * tmp1 = nullptr;
+  Node * tmp2 = nullptr;
+  if(index==0){
+    prepend(value);
+    return true;
+  }else if(index == this->length){
+    append(value);  
+    return true;
+  }
+  tmp1 = this->get(index);
+  tmp2 = tmp1;
+  tmp1 = tmp1->back;
+  tmp1->next=newNode;
+  newNode->back = tmp1;
+  newNode->next=tmp2;
+  tmp2->back = newNode;
+  length++;
+  return true;
+}
+
+bool DoubleLL::deleteNode(short index){
+  if(index < 0 || index>this->length){
+    std::cout<<"[-]The index is not a valid value"<<std::endl;
+    return false;
+  }
+  if(index==0){
+    deleteFirst();
+    return true;
+  }
+  if(index==length){
+    deleteLast();
+    return true;
+  }
+  Node * tmp = this->get(index);
+  Node * tmpAfter = tmp->next;
+  Node * tmpPrev =  tmp->back;
+  tmpPrev->next = tmpAfter;
+  tmpAfter->back = tmpPrev;
+  this->length--;
+  delete(tmp);
+  return true;
+}
+
+
+
+

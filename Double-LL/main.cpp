@@ -19,5 +19,9 @@ int main(){
     std::cout<<ddll->get(2)->value<<std::endl;
   ddll->set(0,99);
   ddll->printList();
+  ddll->insert(7,5);
+  ddll->printList();
+  ddll->deleteNode(1);
+  ddll->printList();
   return 0;
 }
