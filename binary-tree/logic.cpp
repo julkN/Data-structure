@@ -31,12 +31,11 @@ bool BinarySearchTree::insertNode(int value){
 }
 
 bool BinarySearchTree::contain(int value){
-  if(root==nullptr) return false;
   Node * tmp = root;
   while(tmp){
-    if(value==tmp->value)  return true;
     if(value<tmp->value)  tmp=tmp->left;
-    else tmp=tmp->right;
+    else if(value>tmp->value)  tmp=tmp->right;
+    else return true;
   }
   return false;
 }
