@@ -20,3 +20,16 @@ class Stack{
     int pop();
 };
 
+
+class Queue{
+  private:
+    Node * first;
+    Node * last;
+    short height;
+  public:
+    Queue(int value);
+    void printQueue();
+    void enqueue(int value);
+    int dequeue();
+};
+

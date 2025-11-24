@@ -10,5 +10,11 @@ int main(){
   myStack->printStack();
   std::cout<<"The pop value is: ["<<myStack->pop()<<"]"<<std::endl;
   myStack->printStack();
+  std::cout<<"Queue class"<<std::endl;
+  std::unique_ptr<Queue> myQueue(new Queue(11));
+  myQueue->enqueue(5);
+  myQueue->printQueue();
+  std::cout<<myQueue->dequeue()<<std::endl;
+  myQueue->printQueue();  
   return 0;
 }

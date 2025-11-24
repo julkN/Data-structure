@@ -7,7 +7,7 @@ Node::Node(int value){
   this->next = nullptr;
 }
 
-
+//Stack definition and functions
 Stack::Stack(int value){
   Node * newNode = new Node(value);
   top = newNode;
@@ -49,3 +49,49 @@ int Stack::pop(){
   delete(tmp);
   return aux_value; 
 }
+
+//End of stack definition
+
+
+//Queue definition
+Queue::Queue(int value){
+  Node * newNode = new Node(value);
+  this->first = this->last = newNode;
+  height = 1;
+}
+
+void Queue::printQueue(){
+  Node * tmp = this->first;
+  while(tmp){
+    std::cout<<"["<<tmp->value<<"]"<<std::endl;
+    tmp = tmp->next;  
+  }
+}
+
+void Queue::enqueue(int value){
+  Node * newNode = new Node(value);
+  if(first==nullptr)
+    this->first= newNode;
+  else{  
+    last->next = newNode;
+  }
+  this->last = newNode;  
+  height++;  
+}
+
+int Queue::dequeue(){
+  if(first==nullptr) 
+    return INT_MIN;
+  Node * tmp = first;
+  int auxValue = tmp->value;
+  if(first==last)
+    this->first = this->last = nullptr;
+  else
+    first = first->next;
+  delete tmp;
+  height--;
+  return auxValue;  
+}
+//End of Queue definition
+
+
