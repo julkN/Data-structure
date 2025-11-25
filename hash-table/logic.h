@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <vector>
 
 class Node{
   public:
@@ -19,4 +19,8 @@ class HashTable{
     Node *datamap[SIZE];
   public:
     void printTable();
+    int hash(std::string key);
+    void set(std::string key, int value);
+    int get(std::string key);
+    std::vector<std::string> keys();
 };
